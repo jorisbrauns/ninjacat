@@ -1,0 +1,28 @@
+{
+  "name": "NinjaCat",
+  "description": "Easter egg ninjacat",
+  "main": "",
+  "keywords": [
+    "Windows",
+    "Insider",
+    "Microsoft",
+    "NinjaCat"
+  ],
+  "authors": [
+    "Joris Brauns",
+    "Tim Sommer"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.owic.be",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "jqueryui#^1.12.0",
+    "jquery": "^3.1.0"
+  }
+}
