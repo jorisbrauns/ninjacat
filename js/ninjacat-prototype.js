@@ -35,12 +35,19 @@ $(function () {
             }
         }
 
+            console.log(evt.keyCode);
+            console.log(mutex);
+
         if (evt.keyCode !== 39 &&
             evt.keyCode !== 65 &&
             evt.keyCode !== 81 &&
             evt.keyCode !== 87 &&
             evt.keyCode !== 68 &&
-            evt.keyCode !== 90 ) return;
+            evt.keyCode !== 90 ) 
+            {
+                mutex = false;
+                return;
+            };
 
         if (!mutex) {
             mutex = true;
@@ -48,7 +55,6 @@ $(function () {
         }
 
         function move() {
-            console.log(evt.keyCode);
 
             if (enabled) {
                 switch (evt.keyCode) {
