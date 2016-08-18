@@ -1,17 +1,20 @@
 $(function () {
 
     $("body").append('<img src="images/win10_skype_320x320.0.gif" class="ninjacat">');
-    $(".ninjacat").click(function() {
+    $(".ninjacat").click(function () {
         window.location = 'https://insider.windows.com/';
     }).hide();
 
     var enabled = false; var i = 0;
-    var lastInput = "";
     var mutex = false;
     var codes = [];
-    var correctCodes = [78,73,78, 74, 65, 67, 65, 84];
+    var correctCodes = [78, 73, 78, 74, 65, 67, 65, 84];
+
+    $('.ninjacat').css('bottom', -$(window).scrollTop());
+
     $(document).bind('keydown', function (evt) {
 
+        //console.log(evt.keyCode);
         if (!enabled) {
             codes.push(evt.keyCode);
 
@@ -35,29 +38,35 @@ $(function () {
             }
         }
 
-            console.log(evt.keyCode);
-            console.log(mutex);
-
         if (evt.keyCode !== 39 &&
             evt.keyCode !== 65 &&
             evt.keyCode !== 81 &&
             evt.keyCode !== 87 &&
             evt.keyCode !== 68 &&
-            evt.keyCode !== 90 ) 
-            {
-                mutex = false;
-                return;
-            };
+            evt.keyCode !== 71 &&
+            evt.keyCode !== 90) {
+            mutex = false;
+            return;
+        };
 
         if (!mutex) {
             mutex = true;
             move();
         }
 
+        function grawl() {
+            var audio = new Audio('grawl.mp3');
+            audio.play();
+        }
+
         function move() {
 
             if (enabled) {
                 switch (evt.keyCode) {
+                    case 71: // right
+                        grawl();
+                        mutex = false;
+                        break;
                     case 68: // right
                         $(".ninjacat").removeClass('ninjacat-left').animate({
                             left: (parseInt($(".ninjacat").css('left').replace('px', '')) + 40) + 'px'
@@ -79,12 +88,12 @@ $(function () {
                             .animate({ bottom: -$(window).scrollTop() + 160, opacity: '1' },
                                 200,
                                 "linear",
-                                function() {
+                                function () {
                                     $('.ninjacat')
                                         .animate({ bottom: -$(window).scrollTop(), opacity: '1' },
                                             1000,
                                             "easeOutBounce",
-                                            function() {
+                                            function () {
                                                 mutex = false;
                                             });
                                 });
