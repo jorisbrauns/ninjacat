@@ -4,7 +4,7 @@ Type in 'ninjacat' to trigger the easter ninjacat egg! You can play using the ga
 
 Do would like to have this friend on your website as well? All code is here on github!
 
-Demo? Try http://www.owic.be
+Demo? Try http://www.owic.be/video
 
 Integrate this on your website:
 
