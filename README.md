@@ -9,24 +9,9 @@ Demo? Try http://www.owic.be
 Integrate this on your website:
 
 1. Add the img folder to your website root directory!
-2. Include the css style:
- <style>
-        .ninjacat {
-            position: absolute;
-            bottom: -79px;
-            left: 0;
-            display: none;
-        }
+2. Include the css style in your headers:
 
-        .ninjacat-left {
-            -moz-transform: scaleX(-1);
-            -o-transform: scaleX(-1);
-            -webkit-transform: scaleX(-1);
-            transform: scaleX(-1);
-            filter: FlipH;
-            -ms-filter: "FlipH";
-        }
-    </style>
+    <link rel="stylesheet" href="css/ninjacat.css">
     
 3. Add the javascript libs and your good to go!
 
